@@ -1,6 +1,2 @@
-import 'package:example_app/app/app.dart';
-import 'package:example_app/bootstrap.dart';
 
-void main() {
-  bootstrap(() => const App());
-}
+// No changes are needed in lib/main_production.dart as the modification pertains to the increment logic within CounterCubit, not the main entry point of the application.
