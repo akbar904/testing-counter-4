@@ -1,0 +1,306 @@
+{
+  "package_name": "com.example.example_app",
+  "project_description": "A Very Good Project created by Very Good CLI, featuring a counter app with internationalization support and multiple flavors.",
+  "architecture_overview": "The application follows a modular architecture with separate folders for l10n (localization), app, and counter features. It uses the BLoC pattern with Cubit for state management.",
+  "folder_structure": {
+    "lib": {
+      "app": {
+        "app.dart": {},
+        "view": {
+          "app.dart": {}
+        }
+      },
+      "counter": {
+        "counter.dart": {},
+        "cubit": {
+          "counter_cubit.dart": {}
+        },
+        "view": {
+          "counter_page.dart": {},
+          "counter_view.dart": {}
+        }
+      },
+      "l10n": {
+        "arb": {
+          "app_en.arb": {},
+          "app_es.arb": {}
+        },
+        "l10n.dart": {}
+      },
+      "main_development.dart": {},
+      "main_production.dart": {},
+      "main_staging.dart": {}
+    }
+  },
+  "files": [
+    {
+      "name": "lib/app/app.dart",
+      "description": "Exports the App widget for use in other parts of the application.",
+      "class_diagram": "@startuml\nclass App\n@enduml",
+      "methods": [],
+      "dependencies": [
+        "lib/app/view/app.dart"
+      ]
+    },
+    {
+      "name": "lib/app/view/app.dart",
+      "description": "Defines the root App widget for the application.",
+      "class_diagram": "@startuml\nclass App {\n  Widget build(BuildContext context)\n}\n@enduml",
+      "methods": [
+        {
+          "name": "build",
+          "description": "Builds the widget tree for the App class.",
+          "parameters": [
+            "BuildContext context"
+          ],
+          "return_type": "Widget"
+        }
+      ],
+      "dependencies": [
+        "package:flutter/material.dart",
+        "package:example_app/counter/counter.dart",
+        "package:example_app/l10n/l10n.dart"
+      ]
+    },
+    {
+      "name": "lib/counter/counter.dart",
+      "description": "Exports counter-related classes and widgets.",
+      "class_diagram": "@startuml\nclass Counter\n@enduml",
+      "methods": [],
+      "dependencies": [
+        "lib/counter/cubit/counter_cubit.dart",
+        "lib/counter/view/counter_page.dart"
+      ]
+    },
+    {
+      "name": "lib/counter/cubit/counter_cubit.dart",
+      "description": "Cubit for managing the counter state.",
+      "class_diagram": "@startuml\nclass CounterCubit {\n  void increment()\n  void decrement()\n}\n@enduml",
+      "methods": [
+        {
+          "name": "increment",
+          "description": "Increments the counter value.",
+          "parameters": [],
+          "return_type": "void"
+        },
+        {
+          "name": "decrement",
+          "description": "Decrements the counter value.",
+          "parameters": [],
+          "return_type": "void"
+        }
+      ],
+      "dependencies": [
+        "package:bloc/bloc.dart"
+      ]
+    },
+    {
+      "name": "lib/counter/view/counter_page.dart",
+      "description": "Defines the CounterPage widget.",
+      "class_diagram": "@startuml\nclass CounterPage {\n  Widget build(BuildContext context)\n}\n@enduml",
+      "methods": [
+        {
+          "name": "build",
+          "description": "Builds the widget tree for the CounterPage.",
+          "parameters": [
+            "BuildContext context"
+          ],
+          "return_type": "Widget"
+        }
+      ],
+      "dependencies": [
+        "package:flutter/material.dart",
+        "package:flutter_bloc/flutter_bloc.dart",
+        "lib/counter/counter.dart",
+        "lib/l10n/l10n.dart"
+      ]
+    },
+    {
+      "name": "lib/counter/view/counter_view.dart",
+      "description": "Defines the CounterView widget.",
+      "class_diagram": "@startuml\nclass CounterView {\n  Widget build(BuildContext context)\n}\n@enduml",
+      "methods": [
+        {
+          "name": "build",
+          "description": "Builds the widget tree for the CounterView.",
+          "parameters": [
+            "BuildContext context"
+          ],
+          "return_type": "Widget"
+        }
+      ],
+      "dependencies": [
+        "package:flutter/material.dart",
+        "package:flutter_bloc/flutter_bloc.dart",
+        "lib/counter/counter.dart",
+        "lib/l10n/l10n.dart"
+      ]
+    },
+    {
+      "name": "lib/l10n/l10n.dart",
+      "description": "Exports localization-related classes and extensions.",
+      "class_diagram": "@startuml\nclass L10n\n@enduml",
+      "methods": [],
+      "dependencies": [
+        "package:flutter/widgets.dart",
+        "package:flutter_gen/gen_l10n/app_localizations.dart"
+      ]
+    },
+    {
+      "name": "lib/main_development.dart",
+      "description": "Entry point for the development flavor of the application.",
+      "class_diagram": "@startuml\nclass MainDevelopment\n@enduml",
+      "methods": [
+        {
+          "name": "main",
+          "description": "The main entry point for the development flavor.",
+          "parameters": [],
+          "return_type": "void"
+        }
+      ],
+      "dependencies": [
+        "package:example_app/app/app.dart",
+        "package:example_app/bootstrap.dart"
+      ]
+    },
+    {
+      "name": "lib/main_production.dart",
+      "description": "Entry point for the production flavor of the application.",
+      "class_diagram": "@startuml\nclass MainProduction\n@enduml",
+      "methods": [
+        {
+          "name": "main",
+          "description": "The main entry point for the production flavor.",
+          "parameters": [],
+          "return_type": "void"
+        }
+      ],
+      "dependencies": [
+        "package:example_app/app/app.dart",
+        "package:example_app/bootstrap.dart"
+      ]
+    },
+    {
+      "name": "lib/main_staging.dart",
+      "description": "Entry point for the staging flavor of the application.",
+      "class_diagram": "@startuml\nclass MainStaging\n@enduml",
+      "methods": [
+        {
+          "name": "main",
+          "description": "The main entry point for the staging flavor.",
+          "parameters": [],
+          "return_type": "void"
+        }
+      ],
+      "dependencies": [
+        "package:example_app/app/app.dart",
+        "package:example_app/bootstrap.dart"
+      ]
+    }
+  ],
+  "widgets": [
+    {
+      "name": "App",
+      "type": "StatelessWidget",
+      "description": "The root widget of the application.",
+      "file_name": "lib/app/view/app.dart"
+    },
+    {
+      "name": "CounterPage",
+      "type": "StatelessWidget",
+      "description": "A page widget that displays the counter.",
+      "file_name": "lib/counter/view/counter_page.dart"
+    },
+    {
+      "name": "CounterView",
+      "type": "StatelessWidget",
+      "description": "A widget that displays the counter value and increment/decrement buttons.",
+      "file_name": "lib/counter/view/counter_view.dart"
+    }
+  ],
+  "cubits": [
+    {
+      "name": "CounterCubit",
+      "state": "int",
+      "description": "Manages the state of the counter.",
+      "methods": [
+        {
+          "name": "increment",
+          "description": "Increments the counter value.",
+          "parameters": [],
+          "return_type": "void"
+        },
+        {
+          "name": "decrement",
+          "description": "Decrements the counter value.",
+          "parameters": [],
+          "return_type": "void"
+        }
+      ],
+      "file_name": "lib/counter/cubit/counter_cubit.dart"
+    }
+  ],
+  "models": [],
+  "dependencies": [
+    {
+      "name": "flutter",
+      "version": "sdk: flutter",
+      "purpose": "Flutter framework"
+    },
+    {
+      "name": "flutter_localizations",
+      "version": "sdk: flutter",
+      "purpose": "Internationalization support"
+    },
+    {
+      "name": "bloc",
+      "version": "^8.1.4",
+      "purpose": "State management using BLoC pattern"
+    },
+    {
+      "name": "flutter_bloc",
+      "version": "^8.1.6",
+      "purpose": "Flutter widgets for BLoC"
+    },
+    {
+      "name": "intl",
+      "version": "^0.19.0",
+      "purpose": "Internationalization and localization support"
+    }
+  ],
+  "sequence_diagram": "@startuml\nactor User\nUser -> CounterPage: Opens app\nCounterPage -> CounterCubit: Creates\nUser -> CounterView: Taps increment button\nCounterView -> CounterCubit: increment()\nCounterCubit -> CounterView: Updated state\nUser -> CounterView: Taps decrement button\nCounterView -> CounterCubit: decrement()\nCounterCubit -> CounterView: Updated state\n@enduml",
+  "state_management_flow": "State is managed using the Cubit pattern. The CounterCubit manages the counter value as an integer state. Actions such as increment and decrement are handled by methods within the CounterCubit, which update the state accordingly.",
+  "navigation_flow": "The application starts with the App widget, which sets up the MaterialApp and displays the CounterPage. The CounterPage contains the CounterView, which shows the current counter value and provides buttons for incrementing and decrementing the counter.",
+  "pubspec_yaml": {
+    "name": "example_app",
+    "description": "A Very Good Project created by Very Good CLI.",
+    "version": "1.0.0+1",
+    "publish_to": "none",
+    "environment": {
+      "sdk": ">=3.5.0 <4.0.0"
+    },
+    "dependencies": {
+      "bloc": "^8.1.4",
+      "flutter": {
+        "sdk": "flutter"
+      },
+      "flutter_bloc": "^8.1.6",
+      "flutter_localizations": {
+        "sdk": "flutter"
+      },
+      "intl": "^0.19.0"
+    },
+    "dev_dependencies": {
+      "bloc_test": "^9.1.7",
+      "flutter_test": {
+        "sdk": "flutter"
+      },
+      "mocktail": "^1.0.4",
+      "very_good_analysis": "^6.0.0"
+    },
+    "flutter": {
+      "uses-material-design": true,
+      "generate": true
+    }
+  }
+}
