@@ -1,6 +1,6 @@
 {
   "package_name": "com.example.example_app",
-  "project_description": "A Very Good Project created by Very Good CLI, featuring a counter app with internationalization support and multiple flavors.",
+  "project_description": "A Very Good Project created by Very Good CLI, featuring a counter app with internationalization support and multiple flavors. The counter now increments by 2 with each button press.",
   "architecture_overview": "The application follows a modular architecture with separate folders for l10n (localization), app, and counter features. It uses the BLoC pattern with Cubit for state management.",
   "folder_structure": {
     "lib": {
@@ -79,7 +79,7 @@
       "methods": [
         {
           "name": "increment",
-          "description": "Increments the counter value.",
+          "description": "Increments the counter value by 2.",
           "parameters": [],
           "return_type": "void"
         },
@@ -226,7 +226,7 @@
       "methods": [
         {
           "name": "increment",
-          "description": "Increments the counter value.",
+          "description": "Increments the counter value by 2.",
           "parameters": [],
           "return_type": "void"
         },
@@ -275,7 +275,6 @@
     "name": "example_app",
     "description": "A Very Good Project created by Very Good CLI.",
     "version": "1.0.0+1",
-    "publish_to": "none",
     "environment": {
       "sdk": ">=3.5.0 <4.0.0"
     },
